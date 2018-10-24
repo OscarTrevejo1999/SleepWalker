@@ -122,11 +122,33 @@ public class InputManager : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.LeftShift))
         {
-             PC.run();
+            PC.run();
         }
         else
         {
             PC.walk();
+        }
+
+        //Inmune
+         if(Input.GetKeyDown(KeyCode.F10))
+        {
+            PC.Inmune();
+        }
+
+        if(PC.inmune)
+        {
+            if(Input.GetKey(KeyCode.Space))
+            {
+                PC.vy = 1;
+            }
+            else if(Input.GetKey(KeyCode.LeftControl))
+            {
+                PC.vy = -1;
+            }
+            else
+            {
+                PC.vy = 0;
+            }
         }
     }
 }

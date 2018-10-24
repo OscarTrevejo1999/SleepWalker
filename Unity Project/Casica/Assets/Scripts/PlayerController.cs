@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 axis;
     private CharacterController controller;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     public float speed;
     public float tspeed;
     private float forceToGround = Physics.gravity.y;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed;
     public bool tocandoSuelo;
     public bool speedMod;
-    private Vector3 tranformDirection;
+    public Vector3 tranformDirection;
 
 
     //mecanica pull/push
@@ -36,7 +36,18 @@ public class PlayerController : MonoBehaviour
     public bool trepar;
     private RaycastHit Cubito;
     
-    
+    //Muerte por altura
+    public float puntoMasAlto;
+    public float maximoAltura;
+    public bool fAltura;
+
+
+    //Volar
+    public float vy;
+
+    //Estados
+    public bool planear;
+    public bool inmune;
 
     // Use this for initialization
     void Start ()
@@ -44,6 +55,10 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         tspeed = speed;
         speedMod = false;
+        puntoMasAlto = 0;
+        maximoAltura = 0;
+        fAltura = false;
+        
     }
 	
 	// Update is called once per frame
@@ -54,11 +69,13 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection.y = forceToGround;
             gravityMagnitude = 5;
+            planear = false;
         }
         else if(!tocandoSuelo && jump)
         {
             gravityMagnitude = 5;
             moveDirection.y = forceToGround;
+            planear = false;
         }
         else
         {
@@ -203,7 +220,25 @@ public class PlayerController : MonoBehaviour
         
     #endregion
 
-        
+        if(!tocandoSuelo && !planear)
+        {
+            if(!fAltura)
+            {
+                fAltura = true;
+                puntoMasAlto = transform.position.y;
+            }
+            else
+            {
+                if(puntoMasAlto - transform.position.y >= maximoAltura)
+                {
+                    Dead();
+                }
+            }
+        }
+        else
+        {
+            fAltura = false;
+        }
 
     }
 
@@ -219,6 +254,7 @@ public class PlayerController : MonoBehaviour
             gravityMagnitude = 1f;
             speed = 15;
             Debug.Log("Planear");
+            planear = true;
         }
         else
         {
@@ -313,6 +349,29 @@ public class PlayerController : MonoBehaviour
             origen.y += sing * (i + 1) * DistanciaRayo.y;
             sing *= -1;
         }    
+    }
+
+    public void Dead()
+    {
+        if(!inmune)
+        {
+            Debug.Log("Me ha dado un infartito");
+        }
+        
+    }
+
+    public void Inmune()
+    {
+        inmune = !inmune;
+        if(inmune)
+        {
+            Debug.Log("Eres jisus");
+            moveDirection.y = vy;
+        }
+        else
+        {
+            Debug.Log("Ya no eres jisus");
+        }
     }
 
 

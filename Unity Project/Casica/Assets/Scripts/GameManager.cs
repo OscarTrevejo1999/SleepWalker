@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public bool negacionDone;
     public bool pissed;
 
-    public bool negacionDone;
-    
+    public bool habJohnny;
+    public bool pasillo;
+    public bool baño;
+    public bool negacionN;
+    public bool negacionD;
+
     private void Awake()
     {
         if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
@@ -19,14 +24,4 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
     }
-    
-    void Start ()
-    {
-
-    }
-	
-	void Update ()
-    {
-        
-	}
 }
