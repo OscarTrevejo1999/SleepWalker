@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour {
 
     public bool negacionDone;
     public bool pissed;
+    public bool goNegacionD;
 
     public bool habJohnny;
     public bool pasillo;
     public bool baño;
     public bool negacionN;
     public bool negacionD;
+    public bool cuartillo;
 
     private void Awake()
     {

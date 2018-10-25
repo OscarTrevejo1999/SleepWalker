@@ -21,7 +21,7 @@ public class FundidoNegro : MonoBehaviour {
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "negacion_N" && !manager.negacionDone)
+        if (manager.goNegacionD)
         {
             panel.alpha = alpha;
 
@@ -33,7 +33,7 @@ public class FundidoNegro : MonoBehaviour {
             {
                 alpha += 0.3f * Time.deltaTime;
             }
-            if(alpha > 1)
+            if (alpha > 1)
             {
                 manager.negacionDone = true;
                 SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
@@ -45,5 +45,4 @@ public class FundidoNegro : MonoBehaviour {
             }
         }
     }
-
 }
