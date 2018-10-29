@@ -16,6 +16,7 @@ public class TriggerPasillo : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            manager.onPasillo = true;
             if (!manager.baño)
             {
                 SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
@@ -31,6 +32,14 @@ public class TriggerPasillo : MonoBehaviour {
                 SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
                 manager.negacionN = true;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            manager.onPasillo = false;
         }
     }
 }

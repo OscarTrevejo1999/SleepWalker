@@ -16,6 +16,7 @@ public class TriggerBano : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            manager.onBaño = true;
             if(manager.habJohnny)
             {
                 SceneManager.UnloadSceneAsync("habJohnny");
@@ -27,5 +28,10 @@ public class TriggerBano : MonoBehaviour {
                 manager.negacionN = false;
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        manager.onBaño = false;
     }
 }

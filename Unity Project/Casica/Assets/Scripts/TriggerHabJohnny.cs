@@ -16,6 +16,7 @@ public class TriggerHabJohnny : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
+            manager.onHab = true;
             if (!manager.pasillo)
             {
                 SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
@@ -31,6 +32,14 @@ public class TriggerHabJohnny : MonoBehaviour {
                 SceneManager.UnloadSceneAsync("negacion_N");
                 manager.negacionN = false;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            manager.onHab = false;
         }
     }
 }

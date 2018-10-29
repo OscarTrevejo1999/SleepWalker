@@ -36,12 +36,21 @@ public class FundidoNegro : MonoBehaviour {
             if (alpha > 1)
             {
                 manager.negacionDone = true;
-                SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
-                manager.negacionD = true;
-                SceneManager.UnloadSceneAsync("pasillo");
-                manager.pasillo = false;
-                SceneManager.UnloadSceneAsync("negacion_N");
-                manager.negacionN = false;
+                if (!manager.negacionD)
+                {
+                    SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
+                    manager.negacionD = true;
+                }
+                if (manager.pasillo)
+                {
+                    SceneManager.UnloadSceneAsync("pasillo");
+                    manager.pasillo = false;
+                }
+                if (manager.negacionN)
+                {
+                    SceneManager.UnloadSceneAsync("negacion_N");
+                    manager.negacionN = false;
+                }
             }
         }
     }

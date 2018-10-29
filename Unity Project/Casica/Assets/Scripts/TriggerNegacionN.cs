@@ -16,6 +16,7 @@ public class TriggerNegacionN : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            manager.onNegacionN = true;
             if (!manager.negacionDone)
             {
                 manager.goNegacionD = true;
@@ -43,6 +44,14 @@ public class TriggerNegacionN : MonoBehaviour {
                     manager.cuartillo = true;
                 }
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag =="Player")
+        {
+            manager.onNegacionN = false;
         }
     }
 }
