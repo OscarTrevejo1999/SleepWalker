@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
     private bool fPP = false;
     public bool jump = false;
     public int status; 
-
+    public UIControler hud;
 
 
     // Use this for initialization
@@ -31,6 +31,11 @@ public class InputManager : MonoBehaviour
         inputAxis.y = Input.GetAxis("Vertical");
 
         PC.SetAxis(inputAxis);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Pausate");
+            hud.OpenPausePanel();
+        } 
         //Jump
         if(PC.tocandoSuelo)
         {
@@ -112,6 +117,15 @@ public class InputManager : MonoBehaviour
                 PC.Escalar();
             }
 
+        }
+
+        if(PC.interactuar)
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Debug.Log("Voy a interatuar con algo");
+                PC.Interactuar();
+            }
         }
 
 
