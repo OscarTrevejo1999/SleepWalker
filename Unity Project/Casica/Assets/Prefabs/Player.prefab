@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517052276214270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.6, y: 54.9, z: -14.4}
+  m_LocalPosition: {x: 15.6, y: 54.66, z: -14.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4878636144868254}
@@ -202,6 +202,8 @@ MonoBehaviour:
   tocandoSuelo: 0
   speedMod: 0
   tranformDirection: {x: 0, y: 0, z: 0}
+  hud: {fileID: 0}
+  primerSuelo: 0
   cerca: 0
   distance: 2
   mask:
@@ -210,7 +212,7 @@ MonoBehaviour:
   DistanciaRayo: {x: 0, y: 2.45, z: 0}
   trepar: 0
   puntoMasAlto: 0
-  maximoAltura: 0
+  maximoAltura: 10
   fAltura: 0
   vy: 0
   planear: 0

@@ -19,7 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4761551298108420}
-  m_Layer: 0
+  - component: {fileID: 65815352571755606}
+  - component: {fileID: 95516651756599886}
+  m_Layer: 8
   m_Name: libromagicomaravilloso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,12 +38,12 @@ GameObject:
   - component: {fileID: 4506362508616120}
   - component: {fileID: 33055819150876332}
   - component: {fileID: 23853333307032140}
-  - component: {fileID: 64597234138172476}
   - component: {fileID: 114857954203586776}
   - component: {fileID: 54546203636440460}
+  - component: {fileID: 65357113919042790}
   m_Layer: 8
   m_Name: Objeto_Empujar
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,8 +67,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1109179996843502}
-  m_LocalRotation: {x: -0.0003517235, y: 0.206682, z: -0.0016650149, w: 0.9784067}
-  m_LocalPosition: {x: 18.29, y: 52.22, z: 0.47}
+  m_LocalRotation: {x: -0.00035172343, y: 0.20668195, z: -0.0016650147, w: 0.97840667}
+  m_LocalPosition: {x: -13.564636, y: 31.013163, z: -30.924482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4506362508616120}
@@ -128,22 +130,50 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &64597234138172476
-MeshCollider:
+--- !u!65 &65357113919042790
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885272639853848}
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1702476, y: 2.8672972, z: 1.7548124}
+  m_Center: {x: 2.8984272, y: 15.432282, z: 4.6846066}
+--- !u!65 &65815352571755606
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109179996843502}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.41, y: 21.91, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95516651756599886
+Animator:
   serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300056, guid: 8c2c1ecbec6af4346b441e988e8f0bf8, type: 3}
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109179996843502}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1cc57c70ca6201418e1540ac26ef632, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114857954203586776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,3 +185,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c34e0b8b7575bc4594ef6f85f7cf37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movete: {fileID: 0}

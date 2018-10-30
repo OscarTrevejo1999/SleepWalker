@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class UIControler : MonoBehaviour
 {
     public GameObject pusePanel;
-    //public GameObject winPanel;
-    //public GameObject losePanel;
+    public GameObject winPanel;
+    public GameObject losePanel;
     //ublic GameObject MenuPanel;
     //public GameObject CreditsPanel;
 
@@ -18,9 +18,9 @@ public class UIControler : MonoBehaviour
     void Start()
     {
         ClosePausePanel();
-        /*CloseWinPanel();
+        CloseWinPanel();
         CloseLosePanel();
-        CloseCreditsPanel();
+        /*CloseCreditsPanel();
         if (SceneManager.GetActiveScene().name == "Terrain")
         {
             OpenMenuPanel();
@@ -43,19 +43,19 @@ public class UIControler : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
     }
-    /*public void OpenWinPanel()
+    public void OpenWinPanel()
     {
         winPanel.SetActive(true);
         Time.timeScale = 0;
-        winLose = true;
+        //winLose = true;
     }
     public void OpenLosePanel()
     {
         losePanel.SetActive(true);
-        winLose = true;
+        //winLose = true;
     }
 
-    public void OpenMenuPanel()
+    /*public void OpenMenuPanel()
     {
         MenuPanel.SetActive(true);
         winLose = true;
@@ -74,17 +74,17 @@ public class UIControler : MonoBehaviour
         paused = false;
         Time.timeScale = 1;
     }
-    /*public void CloseWinPanel()
+    public void CloseWinPanel()
     {
         winPanel.SetActive(false);
-        winLose = false;
+        //winLose = false;
     }
     public void CloseLosePanel()
     {
         losePanel.SetActive(false);
-        winLose = false;
+        //winLose = false;
     }
-    public void CloseMenuPanel()
+    /*public void CloseMenuPanel()
     {
         MenuPanel.SetActive(false);
         winLose = false;

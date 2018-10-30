@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public bool tocandoSuelo;
     public bool speedMod;
     public Vector3 tranformDirection;
+    public UIControler hud;
+    public bool primerSuelo;
 
 
     //mecanica pull/push
@@ -63,14 +65,20 @@ public class PlayerController : MonoBehaviour
         tspeed = speed;
         speedMod = false;
         puntoMasAlto = 0;
-        maximoAltura = 0;
+        maximoAltura = 10;
         fAltura = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+       
+        
         tocandoSuelo = controller.isGrounded;
+         if(!primerSuelo && tocandoSuelo)
+         {
+             primerSuelo = true;
+         }
         if (tocandoSuelo && !jump)//Dice si el controler esta tocando el suelo
         {
             moveDirection.y = forceToGround;
@@ -370,11 +378,17 @@ public class PlayerController : MonoBehaviour
 
     public void Dead()
     {
-        if(!inmune)
+        if(!inmune && primerSuelo)
         {
             Debug.Log("Me ha dado un infartito");
+            hud.OpenLosePanel();
         }
         
+    }
+
+    public void Win()
+    {
+        hud.OpenWinPanel();
     }
 
     public void Inmune()
