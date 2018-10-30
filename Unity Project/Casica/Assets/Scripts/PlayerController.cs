@@ -41,13 +41,20 @@ public class PlayerController : MonoBehaviour
     public float maximoAltura;
     public bool fAltura;
 
-
     //Volar
     public float vy;
 
     //Estados
     public bool planear;
     public bool inmune;
+    public bool interactuar;
+
+    //Pruebas
+    public GameObject objetoColisionado;
+
+    //Linterna
+    public GameObject linterna;
+
 
     // Use this for initialization
     void Start ()
@@ -58,7 +65,6 @@ public class PlayerController : MonoBehaviour
         puntoMasAlto = 0;
         maximoAltura = 0;
         fAltura = false;
-        
     }
 	
 	// Update is called once per frame
@@ -108,6 +114,7 @@ public class PlayerController : MonoBehaviour
             {
                 num1 = 1;
                 pos = 1;
+                linterna.transform.rotation = Quaternion.Euler(37, 90, 0);
                 Debug.Log("Derecha");
             }   
             else if(axis.x < 0)
@@ -115,6 +122,7 @@ public class PlayerController : MonoBehaviour
                 num1 = -1;
                 num2 = 0;
                 pos = 2;
+                linterna.transform.rotation = Quaternion.Euler(37, -90, 0);
                 Debug.Log("Izquierda");
             }
 
@@ -122,6 +130,7 @@ public class PlayerController : MonoBehaviour
             {
                 num2 = 1;
                 pos = 3;
+                linterna.transform.rotation = Quaternion.Euler(37, 0, 0);
                 Debug.Log("Alante");
                 
             }   
@@ -130,6 +139,7 @@ public class PlayerController : MonoBehaviour
                 num2 = -1;
                 num1 = 0;
                 pos = 4;
+                linterna.transform.rotation = Quaternion.Euler(37, 180, 0);
                 Debug.Log("Atras");
             }
 
@@ -159,9 +169,8 @@ public class PlayerController : MonoBehaviour
 
             x = 1.1f * axis.x + num1;
             z = 1.1f * axis.y + num2;
-        }
-           
-
+        }   
+        
        origen = transform.position;
        int sing = 1;
         for(int i = 0; i < 3; i++)
@@ -172,6 +181,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Estoy cerca");
                 Debug.Log(hit.transform.name);
+                objetoColisionado = hit.transform.gameObject;
                 //Debug.DrawRay (ray.origin, ray.direction * hit.distance, Color.red, 1);
                 switch(i)
                 {
@@ -186,10 +196,16 @@ public class PlayerController : MonoBehaviour
                                 Debug.Log("Es una pared escalabre");
                                 trepar = true;
                             }
+                            else if(hit.collider.tag == "Palanca")
+                            {
+                                Debug.Log("Es un objeto activable");
+                                interactuar = true;
+                            }
                             else
                             {
                                 cerca = false;
                                 trepar = false;
+                                interactuar = false;
                             }
                             break;
                     case 1:
@@ -216,6 +232,7 @@ public class PlayerController : MonoBehaviour
             }
             origen.y += sing * (i + 1) * DistanciaRayo.y;
             sing *= -1;
+            //interactuar = false;
         }
         
     #endregion
@@ -372,6 +389,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Ya no eres jisus");
         }
+    }
+
+    public void Interactuar()
+    {
+        Debug.Log("Interactuo");
+        objetoColisionado.GetComponent<Interactive>().Activar();
     }
 
 

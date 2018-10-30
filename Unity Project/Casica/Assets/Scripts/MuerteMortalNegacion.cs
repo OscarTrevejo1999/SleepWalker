@@ -17,7 +17,6 @@ public class MuerteMortalNegacion : MonoBehaviour {
 	{
 		posicion.y = velocidad * Time.deltaTime;
 		posicion.y = transform.position.y + posicion.y;
-
 		transform.position = posicion;
 	}
 
