@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 48b3bf0b16b7a794e80766bbc472065a
+  m_OcclusionCullingData: {fileID: 36300000, guid: 5482579faf3191249a3d023eb03d9d2c,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ GameObject:
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -406,8 +407,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390750141}
-  m_LocalRotation: {x: 0.19936788, y: 0, z: 0.000000014901163, w: 0.97992474}
-  m_LocalPosition: {x: 189.4115, y: 22.195301, z: -312.22998}
+  m_LocalRotation: {x: 0.27488497, y: -0.011300564, z: 0.0032310567, w: 0.9614053}
+  m_LocalPosition: {x: 292.2, y: 30.02943, z: -383.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -438,7 +439,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: c16c6f8406484704483ae5729442983d, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -785,7 +786,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 647790158}
-  m_LocalRotation: {x: -0.2549133, y: 0.21279149, z: -0.14733315, w: 0.9316823}
+  m_LocalRotation: {x: -0.25491327, y: 0.21279147, z: -0.14733316, w: 0.93168235}
   m_LocalPosition: {x: -37.99135, y: -6.028903, z: 30.889626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -926,7 +927,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822697212}
   m_LocalRotation: {x: -0.26075995, y: 0.22623399, z: -0.15414852, w: 0.92577577}
-  m_LocalPosition: {x: -90.44513, y: 10.280534, z: 54.237324}
+  m_LocalPosition: {x: -90.44513, y: 10.280532, z: 54.237328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1638940647}
@@ -952,7 +953,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1760516272}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
