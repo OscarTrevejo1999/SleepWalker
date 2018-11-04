@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1760516272}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -287,7 +287,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 273998954}
   m_LocalRotation: {x: -0.23426574, y: 0.21145213, z: -0.15337263, w: 0.9364211}
-  m_LocalPosition: {x: 5.059299, y: -8.849282, z: -11.6027355}
+  m_LocalPosition: {x: 12.617306, y: -12.192007, z: -14.407615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1257793287}
@@ -1211,6 +1211,16 @@ Prefab:
       propertyPath: camDesvan
       value: 
       objectReference: {fileID: 273998955}
+    - target: {fileID: 114111014836050942, guid: d873bac7b60ffa04d94c03055cb66835,
+        type: 2}
+      propertyPath: DesvanPoint
+      value: 
+      objectReference: {fileID: 1515000317}
+    - target: {fileID: 114111014836050942, guid: d873bac7b60ffa04d94c03055cb66835,
+        type: 2}
+      propertyPath: desvanPoint
+      value: 
+      objectReference: {fileID: 1515000317}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d873bac7b60ffa04d94c03055cb66835, type: 2}
   m_IsPrefabAsset: 0
@@ -1273,7 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1177140951}
-  m_PathPosition: 0.02564456
+  m_PathPosition: 0
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -1411,11 +1421,39 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1483641656}
   m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 7.7479243, y: -33.90549, z: 17.226377}
+  m_LocalPosition: {x: 3.6, y: -32.1, z: 18.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 146441125}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1515000317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515000318}
+  m_Layer: 0
+  m_Name: DesvanPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1515000318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515000317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 246.63, y: 35, z: -269.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1582402553
 GameObject:
@@ -1599,7 +1637,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1760516272}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -1624,7 +1662,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791946077}
   m_LocalRotation: {x: -0.2616902, y: 0.20717148, z: -0.14277844, w: 0.93177927}
-  m_LocalPosition: {x: 7.982799, y: -29.901827, z: 12.244035}
+  m_LocalPosition: {x: 3.961945, y: -35.573593, z: 22.614574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1847963419}
@@ -1673,7 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1483641657}
-  m_PathPosition: 0.46195102
+  m_PathPosition: 1
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0.12831376, z: -10.096028}
   m_XDamping: 0

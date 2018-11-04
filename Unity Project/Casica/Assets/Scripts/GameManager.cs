@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -37,6 +38,11 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camCuartillo;
     public CinemachineVirtualCamera camDesvan;
 
+    private Transform player;
+    [Header("Teleports")]
+
+    public GameObject desvanPoint;
+
     private void Awake()
     {
         if (GameObject.FindGameObjectsWithTag("GameManager").Length > 1)
@@ -47,6 +53,8 @@ public class GameManager : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
         }
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update()
@@ -58,5 +66,16 @@ public class GameManager : MonoBehaviour {
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
         camDesvan.enabled = onDesvan;
+    }
+
+    public void TpDesvan()
+    {
+        if(!desvan)
+        {
+            SceneManager.LoadSceneAsync("desvan", LoadSceneMode.Additive);
+            desvan = true;
+        }
+        player.position = desvanPoint.transform.position;
+        Debug.Log("TP DONE");
     }
 }

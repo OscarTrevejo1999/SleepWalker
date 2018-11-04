@@ -43,6 +43,16 @@ public class TriggerNegacionN : MonoBehaviour {
                     SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
                     manager.cuartillo = true;
                 }
+                if(manager.baño)
+                {
+                    SceneManager.UnloadSceneAsync("baño");
+                    manager.baño = false;
+                }
+                if(manager.habJohnny)
+                {
+                    SceneManager.UnloadSceneAsync("habJohnny");
+                    manager.habJohnny = false;
+                }
             }
         }
     }

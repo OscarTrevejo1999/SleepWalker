@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private PlayerController PC;
-
+    private GameManager manager;
 
     private float sensitivity = 3.0f;
     private bool fPP = false;
@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
     void Start ()
     {
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         status = 0;
     }
 	
@@ -163,6 +165,12 @@ public class InputManager : MonoBehaviour
             {
                 PC.vy = 0;
             }
+        }
+
+        //Teleport
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            manager.TpDesvan();
         }
     }
 }

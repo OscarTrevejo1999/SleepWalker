@@ -2,37 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoRenderizar : MonoBehaviour {
-
+public class NoRenderHabJohnny : MonoBehaviour
+{
     private GameManager manager;
 
     Renderer[] rend;
 
     private bool done;
 
-    void Start ()
+    void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         rend = GetComponentsInChildren<Renderer>();
     }
 
-    void Update ()
+    public virtual void Update()
     {
-		if(!manager.onHab)
+        if (!manager.onHab)
         {
             foreach (Renderer r in rend)
             {
                 r.enabled = false;
             }
-            /*
-            for (int i = 0; 1 < rend.Length; i++)
-            {
-                rend[i].enabled = false;
-                Debug.Log(rend[i].transform.name);
-            }
-            */
-            //done = true;
+
+            done = true;
         }
-	}
+        if (done && manager.onHab)
+        {
+            foreach (Renderer r in rend)
+            {
+                r.enabled = true;
+            }
+
+            done = false;
+        }
+    }
 }
