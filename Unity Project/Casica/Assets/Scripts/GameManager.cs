@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
     public bool negacionD;
     public bool cuartillo;
     public bool desvan;
+    public bool despensa;
 
     [Header("Camaras Activas")]
     public bool onHab;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
     public bool onNegacionD;
     public bool onCuartillo;
     public bool onDesvan;
+    public bool onDespensa;
 
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
@@ -41,7 +43,14 @@ public class GameManager : MonoBehaviour {
     private Transform player;
     [Header("Teleports")]
 
+    public GameObject habJohnnyPoint;
+    public GameObject pasilloPoint;
+    public GameObject bañoPoint;
+    public GameObject negacionNPoint;
+    public GameObject negacionDPoint;
+    public GameObject cuartilloPoint;
     public GameObject desvanPoint;
+    public GameObject despensaPoint;
 
     private void Awake()
     {
@@ -68,6 +77,72 @@ public class GameManager : MonoBehaviour {
         camDesvan.enabled = onDesvan;
     }
 
+    public void TpHabJohnny()
+    {
+        if (!habJohnny)
+        {
+            SceneManager.LoadSceneAsync("habJohnny", LoadSceneMode.Additive);
+            habJohnny = true;
+        }
+        player.position = habJohnnyPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpPasillo()
+    {
+        if (!pasillo)
+        {
+            SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
+            pasillo = true;
+        }
+        player.position = pasilloPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpBaño()
+    {
+        if (!baño)
+        {
+            SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
+            baño = true;
+        }
+        player.position = bañoPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpNegacionN()
+    {
+        if (!negacionN)
+        {
+            SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
+            negacionN = true;
+        }
+        player.position = negacionNPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpNegacionD()
+    {
+        if (!negacionD)
+        {
+            SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
+            negacionD = true;
+        }
+        player.position = negacionDPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpCuartillo()
+    {
+        if (!cuartillo)
+        {
+            SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
+            cuartillo = true;
+        }
+        player.position = cuartilloPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
     public void TpDesvan()
     {
         if(!desvan)
@@ -76,6 +151,17 @@ public class GameManager : MonoBehaviour {
             desvan = true;
         }
         player.position = desvanPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpDespensa()
+    {
+        if (!despensa)
+        {
+            SceneManager.LoadSceneAsync("despensa", LoadSceneMode.Additive);
+            despensa = true;
+        }
+        player.position = despensaPoint.transform.position;
         Debug.Log("TP DONE");
     }
 }
