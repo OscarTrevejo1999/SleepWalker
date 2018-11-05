@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIControler : MonoBehaviour
 {
     public GameObject pusePanel;
+    public GameObject optionPanel;
     public GameObject winPanel;
     public GameObject losePanel;
     //ublic GameObject MenuPanel;
@@ -17,6 +18,7 @@ public class UIControler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        CloseOptionPanel();
         ClosePausePanel();
         CloseWinPanel();
         CloseLosePanel();
@@ -43,6 +45,12 @@ public class UIControler : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
     }
+
+    public void OpenOptionPanel()
+    {
+        pusePanel.SetActive(false);
+        optionPanel.SetActive(true);
+    }
     public void OpenWinPanel()
     {
         winPanel.SetActive(true);
@@ -54,6 +62,8 @@ public class UIControler : MonoBehaviour
         losePanel.SetActive(true);
         //winLose = true;
     }
+
+
 
     /*public void OpenMenuPanel()
     {
@@ -73,6 +83,12 @@ public class UIControler : MonoBehaviour
         pusePanel.SetActive(false);
         paused = false;
         Time.timeScale = 1;
+    }
+
+    public void CloseOptionPanel()
+    {
+        pusePanel.SetActive(true);
+        optionPanel.SetActive(false);
     }
     public void CloseWinPanel()
     {
