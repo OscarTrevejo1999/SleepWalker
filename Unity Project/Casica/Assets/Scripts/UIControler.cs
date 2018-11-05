@@ -10,6 +10,7 @@ public class UIControler : MonoBehaviour
     public GameObject optionPanel;
     public GameObject winPanel;
     public GameObject losePanel;
+    public GameObject godPanel;
     //ublic GameObject MenuPanel;
     //public GameObject CreditsPanel;
 
@@ -62,8 +63,10 @@ public class UIControler : MonoBehaviour
         losePanel.SetActive(true);
         //winLose = true;
     }
-
-
+    public void OpenGodPanel()
+    {
+        godPanel.SetActive(true);
+    }
 
     /*public void OpenMenuPanel()
     {
@@ -99,6 +102,10 @@ public class UIControler : MonoBehaviour
     {
         losePanel.SetActive(false);
         //winLose = false;
+    }
+    public void CloseGodPanel()
+    {
+        godPanel.SetActive(false);
     }
     /*public void CloseMenuPanel()
     {

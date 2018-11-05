@@ -170,7 +170,7 @@ public class InputManager : MonoBehaviour
         //Teleport
         if(Input.GetKeyDown(KeyCode.T))
         {
-            
+            hud.OpenGodPanel();
         }
     }
 }
