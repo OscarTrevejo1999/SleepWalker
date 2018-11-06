@@ -9,7 +9,6 @@ TagManager:
   - Object
   - Trepar
   - GameManager
-  - Trofeo
   layers:
   - Default
   - TransparentFX
