@@ -104,6 +104,10 @@ public class PlayerController : MonoBehaviour
             moveDirection.x = tranformDirection.x * speed;
             moveDirection.z = tranformDirection.z * speed;
         }
+        if(inmune)
+        {
+            moveDirection.y = vy * speed;
+        }
             controller.Move(moveDirection * Time.deltaTime);//Mueve el controller
         
        

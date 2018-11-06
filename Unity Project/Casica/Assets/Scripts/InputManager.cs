@@ -155,11 +155,11 @@ public class InputManager : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.Space))
             {
-                PC.vy = 1;
+                PC.vy = 3;
             }
             else if(Input.GetKey(KeyCode.LeftControl))
             {
-                PC.vy = -1;
+                PC.vy = -3;
             }
             else
             {
