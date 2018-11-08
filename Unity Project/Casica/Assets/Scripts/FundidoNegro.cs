@@ -14,6 +14,8 @@ public class FundidoNegro : MonoBehaviour {
 
     private float counter;
 
+    public GameObject panelNegro;
+
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -21,9 +23,11 @@ public class FundidoNegro : MonoBehaviour {
 
     private void Update()
     {
-        if (manager.goNegacionD)
+        panel.alpha = alpha;
+
+        if (manager.goNegacionD && !manager.onNegacionD)
         {
-            panel.alpha = alpha;
+            panelNegro.SetActive(true);
 
             if (counter < 10)
             {
@@ -33,24 +37,35 @@ public class FundidoNegro : MonoBehaviour {
             {
                 alpha += 0.3f * Time.deltaTime;
             }
+
             if (alpha > 1)
             {
                 manager.negacionDone = true;
-                if (!manager.negacionD)
-                {
-                    SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
-                    manager.negacionD = true;
-                }
-                if (manager.pasillo)
-                {
-                    SceneManager.UnloadSceneAsync("pasillo");
-                    manager.pasillo = false;
-                }
-                if (manager.negacionN)
-                {
-                    SceneManager.UnloadSceneAsync("negacion_N");
-                    manager.negacionN = false;
-                }
+
+                manager.OpenNegacionD();
+
+                manager.ClosePasillo();
+                manager.CloseNegacionN();
+
+                counter = 0;
+            }
+        }
+
+        if (manager.onNegacionD)
+        {
+            if (counter < 5)
+            {
+                counter += Time.deltaTime;
+            }
+            else
+            {
+                alpha -= 0.3f * Time.deltaTime;
+            }
+
+            if (alpha < 0)
+            {
+                counter = 0;
+                panelNegro.SetActive(false);
             }
         }
     }

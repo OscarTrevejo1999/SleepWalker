@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     public bool despensa;
     public bool cocina;
     public bool salon;
+    public bool habPadres;
 
     [Header("Camaras Activas")]
     public bool onHab;
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour {
     public bool onDespensa;
     public bool onCocina;
     public bool onSalon;
+    public bool onHabPadres;
+    public bool onLaberinto;
 
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camCuartillo;
     public CinemachineVirtualCamera camDesvan;
     public CinemachineVirtualCamera camDespensa;
+    public CinemachineVirtualCamera camHabPadres;
 
     private Transform player;
     [Header("Teleports")]
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour {
     public GameObject despensaPoint;
     public GameObject cocinaPoint;
     public GameObject salonPoint;
+    public GameObject habPadresPoint;
 
     private void Awake()
     {
@@ -89,6 +94,15 @@ public class GameManager : MonoBehaviour {
         else
         {
             camDespensa.enabled = false;
+        }
+
+        if(onHabPadres || onLaberinto)
+        {
+            camHabPadres.enabled = true;
+        }
+        else
+        {
+            camHabPadres.enabled = false;
         }
     }
 
@@ -161,6 +175,13 @@ public class GameManager : MonoBehaviour {
     {
         OpenSalon();
         player.position = salonPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpHabPadres()
+    {
+        OpenHabPadres();
+        player.position = habPadresPoint.transform.position;
         Debug.Log("TP DONE");
     }
     #endregion
@@ -258,6 +279,15 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OpenHabPadres()
+    {
+        if (!habPadres)
+        {
+            SceneManager.LoadSceneAsync("habPadres", LoadSceneMode.Additive);
+            habPadres = true;
+        }
+    }
+
+    public void OpenLaberinto()
     {
         /*
         if (!habPadres)
@@ -385,6 +415,15 @@ public class GameManager : MonoBehaviour {
     }
 
     public void CloseHabPadres()
+    {
+        if (habPadres)
+        {
+            SceneManager.UnloadSceneAsync("habPadres");
+            habPadres = false;
+        }
+    }
+
+    public void CloseLaberinto()
     {
         /*
         if (habPadres)
