@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public bool cuartillo;
     public bool desvan;
     public bool despensa;
+    public bool cocina;
+    public bool salon;
 
     [Header("Camaras Activas")]
     public bool onHab;
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour {
     public bool onCuartillo;
     public bool onDesvan;
     public bool onDespensa;
+    public bool onCocina;
+    public bool onSalon;
 
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
@@ -39,10 +43,10 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camNegacionD;
     public CinemachineVirtualCamera camCuartillo;
     public CinemachineVirtualCamera camDesvan;
+    public CinemachineVirtualCamera camDespensa;
 
     private Transform player;
     [Header("Teleports")]
-
     public GameObject habJohnnyPoint;
     public GameObject pasilloPoint;
     public GameObject bañoPoint;
@@ -51,6 +55,8 @@ public class GameManager : MonoBehaviour {
     public GameObject cuartilloPoint;
     public GameObject desvanPoint;
     public GameObject despensaPoint;
+    public GameObject cocinaPoint;
+    public GameObject salonPoint;
 
     private void Awake()
     {
@@ -75,93 +81,341 @@ public class GameManager : MonoBehaviour {
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
         camDesvan.enabled = onDesvan;
+
+        if(onDespensa || onCocina ||onSalon)
+        {
+            camDespensa.enabled = true;
+        }
+        else
+        {
+            camDespensa.enabled = false;
+        }
     }
 
+
+    #region Teleports
     public void TpHabJohnny()
     {
-        if (!habJohnny)
-        {
-            SceneManager.LoadSceneAsync("habJohnny", LoadSceneMode.Additive);
-            habJohnny = true;
-        }
+        OpenHabJohnny();
         player.position = habJohnnyPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpPasillo()
     {
-        if (!pasillo)
-        {
-            SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
-            pasillo = true;
-        }
+        OpenPasillo();
         player.position = pasilloPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpBaño()
     {
-        if (!baño)
-        {
-            SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
-            baño = true;
-        }
+        OpenBaño();
         player.position = bañoPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpNegacionN()
     {
-        if (!negacionN)
-        {
-            SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
-            negacionN = true;
-        }
+        OpenNegacionN();
         player.position = negacionNPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpNegacionD()
     {
-        if (!negacionD)
-        {
-            SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
-            negacionD = true;
-        }
+        OpenNegacionD();
         player.position = negacionDPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpCuartillo()
     {
-        if (!cuartillo)
-        {
-            SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
-            cuartillo = true;
-        }
+        OpenCuartillo();
         player.position = cuartilloPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpDesvan()
     {
-        if(!desvan)
-        {
-            SceneManager.LoadSceneAsync("desvan", LoadSceneMode.Additive);
-            desvan = true;
-        }
+        OpenDesvan();
         player.position = desvanPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
     public void TpDespensa()
     {
+        OpenDespensa();
+        player.position = despensaPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpCocina()
+    {
+        OpenCocina();
+        player.position = cocinaPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpSalon()
+    {
+        OpenSalon();
+        player.position = salonPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+    #endregion
+
+    #region Abrir Escenas
+
+    public void OpenHabJohnny()
+    {
+        if(!habJohnny)
+        {
+            SceneManager.LoadSceneAsync("habJohnny", LoadSceneMode.Additive);
+            habJohnny = true;
+        }
+    }
+
+    public void OpenPasillo()
+    {
+        if (!pasillo)
+        {
+            SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
+            pasillo = true;
+        }
+    }
+
+    public void OpenBaño()
+    {
+        if (!baño)
+        {
+            SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
+            baño = true;
+        }
+    }
+
+    public void OpenNegacionN()
+    {
+        if (!negacionN)
+        {
+            SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
+            negacionN = true;
+        }
+    }
+
+    public void OpenNegacionD()
+    {
+        if (!negacionD)
+        {
+            SceneManager.LoadSceneAsync("negacion_D", LoadSceneMode.Additive);
+            negacionD = true;
+        }
+    }
+
+    public void OpenCuartillo()
+    {
+        if (!cuartillo)
+        {
+            SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
+            cuartillo = true;
+        }
+    }
+
+    public void OpenDesvan()
+    {
+        if (!desvan)
+        {
+            SceneManager.LoadSceneAsync("desvan", LoadSceneMode.Additive);
+            desvan = true;
+        }
+    }
+
+    public void OpenDespensa()
+    {
         if (!despensa)
         {
             SceneManager.LoadSceneAsync("despensa", LoadSceneMode.Additive);
             despensa = true;
         }
-        player.position = despensaPoint.transform.position;
-        Debug.Log("TP DONE");
     }
+
+    public void OpenCocina()
+    {
+        if (!cocina)
+        {
+            SceneManager.LoadSceneAsync("cocina", LoadSceneMode.Additive);
+            cocina = true;
+        }
+    }
+
+    public void OpenSalon()
+    {
+        if (!salon)
+        {
+            SceneManager.LoadSceneAsync("salon", LoadSceneMode.Additive);
+            salon = true;
+        }
+    }
+
+    public void OpenHabPadres()
+    {
+        /*
+        if (!habPadres)
+        {
+            SceneManager.LoadSceneAsync("habPadres", LoadSceneMode.Additive);
+            habPadres = true;
+        }
+        */
+    }
+
+    public void OpenSotanoN()
+    {
+        /*
+        if (!sotanoN)
+        {
+            SceneManager.LoadSceneAsync("sotanoN", LoadSceneMode.Additive);
+            sotanoN = true;
+        }
+        */
+    }
+
+    public void OpenSotanoD()
+    {
+        /*
+        if (!sotanoD)
+        {
+            SceneManager.LoadSceneAsync("sotanoD", LoadSceneMode.Additive);
+            sotanoD = true;
+        }
+        */
+    }
+
+    #endregion
+
+    #region Cerrar Escenas
+
+    public void CloseHabJohnny()
+    {
+        if (habJohnny)
+        {
+            SceneManager.UnloadSceneAsync("habJohnny");
+            habJohnny = false;
+        }
+    }
+
+    public void ClosePasillo()
+    {
+        if (pasillo)
+        {
+            SceneManager.UnloadSceneAsync("pasillo");
+            pasillo = false;
+        }
+    }
+
+    public void CloseBaño()
+    {
+        if (baño)
+        {
+            SceneManager.UnloadSceneAsync("baño");
+            baño = false;
+        }
+    }
+
+    public void CloseNegacionN()
+    {
+        if (negacionN)
+        {
+            SceneManager.UnloadSceneAsync("negacion_N");
+            negacionN = false;
+        }
+    }
+
+    public void CloseNegacionD()
+    {
+        if (negacionD)
+        {
+            SceneManager.UnloadSceneAsync("negacion_D");
+            negacionD = false;
+        }
+    }
+
+    public void CloseCuartillo()
+    {
+        if (cuartillo)
+        {
+            SceneManager.UnloadSceneAsync("cuartillo");
+            cuartillo = false;
+        }
+    }
+
+    public void CloseDesvan()
+    {
+        if (desvan)
+        {
+            SceneManager.UnloadSceneAsync("desvan");
+            desvan = false;
+        }
+    }
+
+    public void CloseDespensa()
+    {
+        if (despensa)
+        {
+            SceneManager.UnloadSceneAsync("despensa");
+            despensa = false;
+        }
+    }
+
+    public void CloseCocina()
+    {
+        if (cocina)
+        {
+            SceneManager.UnloadSceneAsync("cocina");
+            cocina = false;
+        }
+    }
+
+    public void CloseSalon()
+    {
+        if (salon)
+        {
+            SceneManager.UnloadSceneAsync("salon");
+            salon = false;
+        }
+    }
+
+    public void CloseHabPadres()
+    {
+        /*
+        if (habPadres)
+        {
+            SceneManager.UnloadSceneAsync("habPadres");
+            habPadres = false;
+        }
+        */
+    }
+
+    public void CloseSotanoN()
+    {
+        /*
+        if (sotanoN)
+        {
+            SceneManager.UnloadSceneAsync("sotanoN");
+            sotanoN = false;
+        }
+        */
+    }
+
+    public void CloseSotanoD()
+    {
+        /*
+        if (sotanoD)
+        {
+            SceneManager.UnloadSceneAsync("sotanoD");
+            sotanoD = false;
+        }
+        */
+    }
+
+    #endregion
 }

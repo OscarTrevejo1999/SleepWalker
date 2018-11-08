@@ -16,6 +16,19 @@ public class TriggerNegacionD : MonoBehaviour {
         if(other.tag == "Player")
         {
             manager.onNegacionD = true;
+
+            manager.CloseHabJohnny();
+            manager.ClosePasillo();
+            manager.CloseBaño();
+            manager.CloseNegacionN();
+            manager.CloseCuartillo();
+            manager.CloseDesvan();
+            manager.CloseDespensa();
+            manager.CloseCocina();
+            manager.CloseSalon();
+            manager.CloseHabPadres();
+            manager.CloseSotanoN();
+            manager.CloseSotanoD();
         }
     }
 

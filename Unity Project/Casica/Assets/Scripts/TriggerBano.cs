@@ -17,16 +17,19 @@ public class TriggerBano : MonoBehaviour {
         if (other.tag == "Player")
         {
             manager.onBaño = true;
-            if(manager.habJohnny)
-            {
-                SceneManager.UnloadSceneAsync("habJohnny");
-                manager.habJohnny = false;
-            }
-            if (manager.negacionN)
-            {
-                SceneManager.UnloadSceneAsync("negacion_N");
-                manager.negacionN = false;
-            }
+
+            manager.CloseHabJohnny();
+            manager.CloseNegacionN();
+            manager.CloseNegacionD();
+            manager.CloseCuartillo();
+            manager.CloseDesvan();
+            manager.CloseHabPadres();
+            manager.CloseSalon();
+            manager.CloseSotanoD();
+            manager.CloseSotanoN();
+            manager.CloseCocina();
+
+            manager.OpenPasillo();
         }
     }
 

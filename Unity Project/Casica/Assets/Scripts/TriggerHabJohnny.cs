@@ -17,21 +17,19 @@ public class TriggerHabJohnny : MonoBehaviour {
         if(other.tag == "Player")
         {
             manager.onHab = true;
-            if (!manager.pasillo)
-            {
-                SceneManager.LoadSceneAsync("pasillo", LoadSceneMode.Additive);
-                manager.pasillo = true;
-            }
-            if(manager.baño)
-            {
-                SceneManager.UnloadSceneAsync("baño");
-                manager.baño = false;
-            }
-            if(manager.negacionN)
-            {
-                SceneManager.UnloadSceneAsync("negacion_N");
-                manager.negacionN = false;
-            }
+
+            manager.CloseBaño();
+            manager.CloseNegacionN();
+            manager.CloseNegacionD();
+            manager.CloseCuartillo();
+            manager.CloseDesvan();
+            manager.CloseHabPadres();
+            manager.CloseSalon();
+            manager.CloseSotanoD();
+            manager.CloseSotanoN();
+            manager.CloseCocina();
+
+            manager.OpenPasillo();
         }
     }
 

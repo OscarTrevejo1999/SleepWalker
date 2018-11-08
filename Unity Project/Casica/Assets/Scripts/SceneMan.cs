@@ -10,8 +10,7 @@ public class SceneMan : MonoBehaviour {
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        SceneManager.LoadScene("habJohnny", LoadSceneMode.Additive);
-        manager.habJohnny = true;
+        manager.TpHabJohnny();
         Destroy(this);
     }
 }

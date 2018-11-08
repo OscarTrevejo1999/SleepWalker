@@ -17,20 +17,22 @@ public class TriggerPasillo : MonoBehaviour {
         if (other.tag == "Player")
         {
             manager.onPasillo = true;
-            if (!manager.baño)
+
+            manager.CloseNegacionD();
+            manager.CloseCuartillo();
+            manager.CloseDesvan();
+            manager.CloseHabPadres();
+            manager.CloseSalon();
+            manager.CloseSotanoD();
+            manager.CloseSotanoN();
+            manager.CloseCocina();
+
+            manager.OpenHabJohnny();
+            manager.OpenBaño();
+
+            if (manager.pissed)
             {
-                SceneManager.LoadSceneAsync("baño", LoadSceneMode.Additive);
-                manager.baño = true;
-            }
-            if (!manager.habJohnny)
-            {
-                SceneManager.LoadSceneAsync("habJohnny", LoadSceneMode.Additive);
-                manager.habJohnny = true;
-            }
-            if(manager.pissed && !manager.negacionN)
-            {
-                SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
-                manager.negacionN = true;
+                manager.OpenNegacionN();
             }
         }
     }

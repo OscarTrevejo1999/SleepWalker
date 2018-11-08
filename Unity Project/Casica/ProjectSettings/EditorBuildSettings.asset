@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/despensa.unity
     guid: d98364a041b5f8441af81af5bf834fe0
+  - enabled: 1
+    path: Assets/Scenes/cocina.unity
+    guid: ce3d96ce90de89447b5a82c9c99e0212
+  - enabled: 1
+    path: Assets/Scenes/salon.unity
+    guid: 95878efffed264449ab413cd0442d833
   m_configObjects: {}

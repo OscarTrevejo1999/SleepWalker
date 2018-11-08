@@ -17,16 +17,21 @@ public class TriggerCuartillo : MonoBehaviour {
         if(other.tag == "Player")
         {
             manager.onCuartillo = true;
-            if(!manager.desvan)
-            {
-                SceneManager.LoadSceneAsync("desvan", LoadSceneMode.Additive);
-                manager.desvan = true;
-            }
-            if(!manager.negacionN)
-            {
-                SceneManager.LoadSceneAsync("negacion_N", LoadSceneMode.Additive);
-                manager.negacionN = true;
-            }
+
+            manager.CloseHabJohnny();
+            manager.ClosePasillo();
+            manager.CloseBaño();
+            manager.CloseNegacionD();
+            manager.CloseDesvan();
+            manager.CloseDespensa();
+            manager.CloseCocina();
+            manager.CloseSalon();
+            manager.CloseHabPadres();
+            manager.CloseSotanoN();
+            manager.CloseSotanoD();
+
+            manager.OpenNegacionN();
+
         }
     }
 

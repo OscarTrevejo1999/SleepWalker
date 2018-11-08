@@ -17,41 +17,20 @@ public class TriggerDesvan : MonoBehaviour {
         if (other.tag == "Player")
         {
             manager.onDesvan = true;
-            if (manager.negacionN)
-            {
-                SceneManager.UnloadSceneAsync("negacion_N");
-                manager.negacionN = false;
-            }
-            if (manager.cuartillo)
-            {
-                SceneManager.UnloadSceneAsync("cuartillo");
-                manager.cuartillo = false;
-            }
-            if(manager.habJohnny)
-            {
-                SceneManager.UnloadSceneAsync("habJohnny");
-                manager.habJohnny = false;
-            }
-            if (manager.baño)
-            {
-                SceneManager.UnloadSceneAsync("baño");
-                manager.baño = false;
-            }
-            if (manager.negacionN)
-            {
-                SceneManager.UnloadSceneAsync("negacion_N");
-                manager.negacionN = false;
-            }
-            if (manager.negacionD)
-            {
-                SceneManager.UnloadSceneAsync("negacion_D");
-                manager.negacionD = false;
-            }
-            if (manager.pasillo)
-            {
-                SceneManager.UnloadSceneAsync("pasillo");
-                manager.pasillo = false;
-            }
+
+            manager.CloseHabJohnny();
+            manager.ClosePasillo();
+            manager.CloseBaño();
+            manager.CloseNegacionN();
+            manager.CloseNegacionD();
+            manager.CloseCuartillo();
+            manager.CloseCocina();
+            manager.CloseSalon();
+            manager.CloseHabPadres();
+            manager.CloseSotanoN();
+            manager.CloseSotanoD();
+
+            manager.OpenDespensa();
         }
     }
 

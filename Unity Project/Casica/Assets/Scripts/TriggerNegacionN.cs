@@ -17,42 +17,25 @@ public class TriggerNegacionN : MonoBehaviour {
         if (other.tag == "Player")
         {
             manager.onNegacionN = true;
+
+            manager.CloseHabJohnny();
+            manager.CloseBaño();
+            manager.CloseDespensa();
+            manager.CloseDesvan();
+            manager.CloseCocina();
+            manager.CloseSalon();
+            manager.CloseHabPadres();
+            manager.CloseSotanoN();
+            manager.CloseSotanoD();
+
             if (!manager.negacionDone)
             {
                 manager.goNegacionD = true;
-                if (manager.habJohnny)
-                {
-                    SceneManager.UnloadSceneAsync("habJohnny");
-                    manager.habJohnny = false;
-                }
-                if (manager.baño)
-                {
-                    SceneManager.UnloadSceneAsync("baño");
-                    manager.baño = false;
-                }
             }
             if(manager.negacionDone)
             {
-                if(manager.pasillo)
-                {
-                    SceneManager.UnloadSceneAsync("pasillo");
-                    manager.pasillo = false;
-                }
-                if(!manager.cuartillo)
-                {
-                    SceneManager.LoadSceneAsync("cuartillo", LoadSceneMode.Additive);
-                    manager.cuartillo = true;
-                }
-                if(manager.baño)
-                {
-                    SceneManager.UnloadSceneAsync("baño");
-                    manager.baño = false;
-                }
-                if(manager.habJohnny)
-                {
-                    SceneManager.UnloadSceneAsync("habJohnny");
-                    manager.habJohnny = false;
-                }
+                manager.ClosePasillo();
+                manager.OpenCuartillo();
             }
         }
     }
