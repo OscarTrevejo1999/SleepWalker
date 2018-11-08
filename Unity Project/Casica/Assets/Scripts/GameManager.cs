@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour {
     public bool cocina;
     public bool salon;
     public bool habPadres;
+    public bool laberinto;
+    public bool sotanoN;
+    public bool sotanoD;
 
     [Header("Camaras Activas")]
     public bool onHab;
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour {
     public bool onSalon;
     public bool onHabPadres;
     public bool onLaberinto;
+    public bool onSotanoN;
+    public bool onSotanoD;
 
     [Header("Camaras")]
     public CinemachineVirtualCamera camHab;
@@ -48,6 +53,8 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camDesvan;
     public CinemachineVirtualCamera camDespensa;
     public CinemachineVirtualCamera camHabPadres;
+    //public CinemachineVirtualCamera camLaberinto;
+    public CinemachineVirtualCamera camSotanoN;
 
     private Transform player;
     [Header("Teleports")]
@@ -62,6 +69,9 @@ public class GameManager : MonoBehaviour {
     public GameObject cocinaPoint;
     public GameObject salonPoint;
     public GameObject habPadresPoint;
+    //public GameObject habLaberintoPoint;
+    public GameObject sotanoNPoint;
+    //public GameObject sotanoDPoint;
 
     private void Awake()
     {
@@ -103,6 +113,15 @@ public class GameManager : MonoBehaviour {
         else
         {
             camHabPadres.enabled = false;
+        }
+
+        if(onSotanoN || onSotanoD)
+        {
+            camSotanoN.enabled = true;
+        }
+        else
+        {
+            camSotanoN.enabled = false;
         }
     }
 
@@ -182,6 +201,27 @@ public class GameManager : MonoBehaviour {
     {
         OpenHabPadres();
         player.position = habPadresPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpLaberinto()
+    {
+        OpenLaberinto();
+        //player.position = laberintoPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpSotanoN()
+    {
+        OpenSotanoN();
+        player.position = sotanoNPoint.transform.position;
+        Debug.Log("TP DONE");
+    }
+
+    public void TpSotanoD()
+    {
+        OpenSotanoD();
+        //player.position = sotanoDPoint.transform.position;
         Debug.Log("TP DONE");
     }
     #endregion
@@ -300,13 +340,11 @@ public class GameManager : MonoBehaviour {
 
     public void OpenSotanoN()
     {
-        /*
         if (!sotanoN)
         {
             SceneManager.LoadSceneAsync("sotanoN", LoadSceneMode.Additive);
             sotanoN = true;
         }
-        */
     }
 
     public void OpenSotanoD()
@@ -436,13 +474,11 @@ public class GameManager : MonoBehaviour {
 
     public void CloseSotanoN()
     {
-        /*
         if (sotanoN)
         {
             SceneManager.UnloadSceneAsync("sotanoN");
             sotanoN = false;
         }
-        */
     }
 
     public void CloseSotanoD()
