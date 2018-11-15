@@ -18,3 +18,6 @@ Programador: Aitor Javier Perez Muro
 
 Link: https://github.com/AcroSenpai
 
+Animador y Programador: Alex Reverter Lices
+
+Link: https://github.com/MrJake7X
