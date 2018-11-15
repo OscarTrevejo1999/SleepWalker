@@ -21,3 +21,7 @@ Link: https://github.com/AcroSenpai
 Animador y Programador: Alex Reverter Lices
 
 Link: https://github.com/MrJake7X
+
+Modelador 3D, Sonido, VFX: Oscar Trevejo Rodriguez
+
+https://github.com/OscarTrevejo1999
