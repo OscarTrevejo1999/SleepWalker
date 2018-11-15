@@ -53,9 +53,13 @@ public class PlayerController : MonoBehaviour
 
     //Pruebas
     public GameObject objetoColisionado;
+    public bool Realentizado;
 
     //Linterna
     public GameObject linterna;
+    public bool fLinterna;
+    public bool pLinterna;
+    public int cLinterna;
 
 
     // Use this for initialization
@@ -67,6 +71,10 @@ public class PlayerController : MonoBehaviour
         puntoMasAlto = 0;
         maximoAltura = 10;
         fAltura = false;
+        fLinterna = false;
+        pLinterna = false;
+        cLinterna ++;
+        Realentizado = false;
     }
 	
 	// Update is called once per frame
@@ -413,6 +421,44 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Interactuo");
         objetoColisionado.GetComponent<Interactive>().Activar();
+    }
+
+    public void Linterna()
+    {
+        if(pLinterna)
+        {
+            fLinterna = !fLinterna;
+            if(fLinterna)
+            {
+                linterna.SetActive(true);
+            }
+            else
+            {
+                linterna.SetActive(false);
+            }
+        }
+        
+    }
+
+    public void cojerObj(int num)
+    {
+        if(num == 1)
+        {
+            Debug.Log("Cojo la linternita");
+            /*Animaicon recogiendo la linterna y que desde ahora aparezca */
+            cLinterna ++;
+        }
+        else
+        {
+            /*Recojer pilas */
+            cLinterna ++;
+
+            if(cLinterna == 4)
+            {
+                /*Linterna operativa */
+                pLinterna = true;
+            }
+        }
     }
 
 

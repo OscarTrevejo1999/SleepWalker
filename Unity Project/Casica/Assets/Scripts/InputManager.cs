@@ -172,5 +172,10 @@ public class InputManager : MonoBehaviour
         {
             hud.OpenGodPanel();
         }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            PC.Linterna();
+        }
     }
 }
