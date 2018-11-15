@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TriggerDesvan : MonoBehaviour {
+public class TriggerLaberinto : MonoBehaviour {
 
     private GameManager manager;
 
@@ -16,7 +15,7 @@ public class TriggerDesvan : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            manager.onDesvan = true;
+            manager.onLaberinto = true;
 
             manager.CloseHabJohnny();
             manager.ClosePasillo();
@@ -24,14 +23,14 @@ public class TriggerDesvan : MonoBehaviour {
             manager.CloseNegacionN();
             manager.CloseNegacionD();
             manager.CloseCuartillo();
+            manager.CloseDesvan();
+            manager.CloseDespensa();
             manager.CloseCocina();
             manager.CloseSalon();
-            manager.CloseHabPadres();
-            manager.CloseLaberinto();
             manager.CloseSotanoN();
             manager.CloseSotanoD();
 
-            manager.OpenDespensa();
+            manager.OpenHabPadres();
         }
     }
 
@@ -39,7 +38,7 @@ public class TriggerDesvan : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            manager.onDesvan = false;
+            manager.onLaberinto = false;
         }
     }
 }

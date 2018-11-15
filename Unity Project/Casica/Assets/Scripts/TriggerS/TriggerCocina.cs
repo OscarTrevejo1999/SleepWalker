@@ -25,6 +25,7 @@ public class TriggerCocina : MonoBehaviour {
             manager.CloseCuartillo();
             manager.CloseDesvan();
             manager.CloseHabPadres();
+            manager.CloseLaberinto();
             manager.CloseSotanoD();
             manager.CloseSotanoN();
 

@@ -24,10 +24,11 @@ public class TriggerDespensa : MonoBehaviour {
             manager.CloseNegacionD();
             manager.CloseCuartillo();
             manager.CloseDesvan();
-            manager.CloseHabPadres();
             manager.CloseSalon();
-            manager.CloseSotanoD();
+            manager.CloseHabPadres();
+            manager.CloseLaberinto();
             manager.CloseSotanoN();
+            manager.CloseSotanoD();
 
             manager.OpenCocina();
         }

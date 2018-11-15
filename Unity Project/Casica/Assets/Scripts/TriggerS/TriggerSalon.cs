@@ -26,6 +26,7 @@ public class TriggerSalon : MonoBehaviour {
             manager.CloseDesvan();
             manager.CloseDespensa();
             manager.CloseHabPadres();
+            manager.CloseLaberinto();
             manager.CloseSotanoD();
             manager.CloseSotanoN();
 

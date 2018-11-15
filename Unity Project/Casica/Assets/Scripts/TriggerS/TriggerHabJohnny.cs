@@ -23,11 +23,14 @@ public class TriggerHabJohnny : MonoBehaviour {
             manager.CloseNegacionD();
             manager.CloseCuartillo();
             manager.CloseDesvan();
-            manager.CloseHabPadres();
+            manager.CloseDespensa();
+            manager.CloseCocina();
             manager.CloseSalon();
             manager.CloseSotanoD();
             manager.CloseSotanoN();
-            manager.CloseCocina();
+            manager.CloseHabPadres();
+            manager.CloseLaberinto();
+
 
             manager.OpenPasillo();
         }

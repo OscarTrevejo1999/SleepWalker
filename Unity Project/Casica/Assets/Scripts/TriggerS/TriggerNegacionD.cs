@@ -27,6 +27,7 @@ public class TriggerNegacionD : MonoBehaviour {
             manager.CloseCocina();
             manager.CloseSalon();
             manager.CloseHabPadres();
+            manager.CloseLaberinto();
             manager.CloseSotanoN();
             manager.CloseSotanoD();
         }

@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour {
     public CinemachineVirtualCamera camDesvan;
     public CinemachineVirtualCamera camDespensa;
     public CinemachineVirtualCamera camHabPadres;
-    //public CinemachineVirtualCamera camLaberinto;
+    public CinemachineVirtualCamera camLaberinto;
     public CinemachineVirtualCamera camSotanoN;
 
     private Transform player;
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
     public GameObject cocinaPoint;
     public GameObject salonPoint;
     public GameObject habPadresPoint;
-    //public GameObject habLaberintoPoint;
+    public GameObject laberintoPoint;
     public GameObject sotanoNPoint;
     //public GameObject sotanoDPoint;
 
@@ -96,23 +96,17 @@ public class GameManager : MonoBehaviour {
         camNegacionD.enabled = onNegacionD;
         camCuartillo.enabled = onCuartillo;
         camDesvan.enabled = onDesvan;
+        camHabPadres.enabled = onHabPadres;
+        camLaberinto.enabled = onLaberinto;
 
-        if(onDespensa || onCocina ||onSalon)
+
+        if (onDespensa || onCocina ||onSalon)
         {
             camDespensa.enabled = true;
         }
         else
         {
             camDespensa.enabled = false;
-        }
-
-        if(onHabPadres || onLaberinto)
-        {
-            camHabPadres.enabled = true;
-        }
-        else
-        {
-            camHabPadres.enabled = false;
         }
 
         if(onSotanoN || onSotanoD)
@@ -207,7 +201,7 @@ public class GameManager : MonoBehaviour {
     public void TpLaberinto()
     {
         OpenLaberinto();
-        //player.position = laberintoPoint.transform.position;
+        player.position = laberintoPoint.transform.position;
         Debug.Log("TP DONE");
     }
 
@@ -329,13 +323,11 @@ public class GameManager : MonoBehaviour {
 
     public void OpenLaberinto()
     {
-        /*
-        if (!habPadres)
+        if (!laberinto)
         {
-            SceneManager.LoadSceneAsync("habPadres", LoadSceneMode.Additive);
-            habPadres = true;
+            SceneManager.LoadSceneAsync("laberinto", LoadSceneMode.Additive);
+            laberinto = true;
         }
-        */
     }
 
     public void OpenSotanoN()
@@ -463,13 +455,11 @@ public class GameManager : MonoBehaviour {
 
     public void CloseLaberinto()
     {
-        /*
-        if (habPadres)
+        if (laberinto)
         {
-            SceneManager.UnloadSceneAsync("habPadres");
-            habPadres = false;
+            SceneManager.UnloadSceneAsync("laberinto");
+            laberinto = false;
         }
-        */
     }
 
     public void CloseSotanoN()

@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/habPadres.unity
     guid: bf722406ef0ff684fb6509dd97616c07
   - enabled: 1
+    path: Assets/Scenes/laberinto.unity
+    guid: e1e316ca5a290584b860bef39c66bbd6
+  - enabled: 1
     path: Assets/Scenes/sotanoN.unity
     guid: 015679027b3cc0c41a484c5e34e092de
   m_configObjects: {}

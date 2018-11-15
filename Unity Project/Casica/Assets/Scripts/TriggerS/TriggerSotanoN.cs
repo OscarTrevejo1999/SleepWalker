@@ -28,6 +28,7 @@ public class TriggerSotanoN : MonoBehaviour {
             manager.CloseCocina();
             manager.CloseSalon();
             manager.CloseHabPadres();
+            manager.CloseLaberinto();
 
             manager.OpenSotanoD();
         }
