@@ -5,31 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Player.unity
-    guid: 48b3bf0b16b7a794e80766bbc472065a
-  - enabled: 1
-    path: Assets/Scenes/habJohnny.unity
-    guid: 656fa5b1d089ede4596577bdff6a0c22
-  - enabled: 1
-    path: Assets/Scenes/pasillo.unity
-    guid: 36ee8e61e749064438781f9e58edc536
-  - enabled: 1
-    path: "Assets/Scenes/ba\xF1o.unity"
-    guid: a86cc2e2f5c3bc44a95f0b05f4f0848b
-  - enabled: 1
-    path: Assets/Scenes/negacion_N.unity
-    guid: 6e85f74dc7b9bae43b00cb0af974ad5a
-  - enabled: 1
-    path: Assets/Scenes/negacion_D.unity
-    guid: 48702c135fc3f2b49b20c3df05e44b3c
-  - enabled: 1
-    path: Assets/Scenes/Cuartillo.unity
-    guid: 1652462deb83d1740bb7bb8292ef8555
-  - enabled: 1
-    path: Assets/Scenes/desvan.unity
-    guid: 10e7dc3c4d63b374eb40b4c005d69129
-  - enabled: 1
-    path: Assets/Scenes/despensa.unity
-    guid: d98364a041b5f8441af81af5bf834fe0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
